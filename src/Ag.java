@@ -23,7 +23,7 @@ public class Ag {
 		
 		
 		 
-	            File file = new File("C:\\IdeaProjects\\test\\src\\sample.txt");
+	            File file = new File("C:\\IdeaProjects\\test\\src\\encode.txt");
 	            FileReader filereader = new FileReader(file);
 	            BufferedReader bufReader = new BufferedReader(filereader);
 	            String line = "";
@@ -82,7 +82,7 @@ public class Ag {
 		try{
 			Encoder encoder = Base64.getEncoder();
 			
-            File file = new File("C:\\IdeaProjects\\test\\src\\sample.txt");
+            File file = new File("C:\\IdeaProjects\\test\\src\\encode.txt");
             FileReader filereader = new FileReader(file);
             BufferedReader bufReader = new BufferedReader(filereader);
             String line = "";
