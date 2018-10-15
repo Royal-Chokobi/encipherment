@@ -3,14 +3,16 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.HashMap;
+import java.util.Base64;
+import java.util.Base64.Encoder;
+import java.util.Base64.Decoder;
 
 public class encodeClass {
 
     public void encode(){
         try{
-            File file = new File("C:\\in_workspace\\encipherment\\txt_file\\encode.txt");
+            File file = new File("C:\\IdeaProjects\\encipherment\\txt_file\\encode.txt");
             FileReader filereader = new FileReader(file);
             int ch_txt = 0;
             String txt = "";
@@ -31,16 +33,17 @@ public class encodeClass {
 
                     if(char_txt_16.equals("2e")){
                         txtArray.add(char_txt_16);
-                        txtMap.put(lineNum, txtArray.toString());
+                        txt += char_txt_16;
+                        txtMap.put(lineNum, txt);
                         txtArray.clear();
-                        //txtArray[lineNum] += char_txt_16;
+                        txt="";
                         lineNum++;
 
                     }else{
-                        txtArray.add(char_txt_16+" ");
-                       // txtArray[lineNum] += char_txt_16+" ";
+                        txt += char_txt_16+" ";
+                        txtArray.add(char_txt_16);
                     }
-                    txt += Integer.toString((char)ch_txt, 16)+" ";
+                   //txt += char_txt_16+" ";
                 }
 
 
@@ -48,9 +51,22 @@ public class encodeClass {
                 //System.out.println(Integer.toString((char)singleCh, 16));  //returns c548
             }
 
-            System.out.println(txt);
-            System.out.println(txtMap.toString());
-            System.out.println(txtArray.toString());
+            //System.out.println(txt);
+            Encoder encoder = Base64.getEncoder();
+            Decoder decoder = Base64.getDecoder();
+
+            //	 byte[] encodeByte = encoder.encode(line.getBytes());
+            //  byte[] decodeByte = decoder.decode(encodeByte);
+            //	System.out.println(new String(decodeByte));
+            for(int i = 0; i < txtMap.size(); i++){
+               // Integer.decode(txtMap.get(i));
+
+                //txtMap.get(i);
+              //  byte[] encodeByte = encoder.encode(txtMap.get(i).getBytes());
+                System.out.println(txtMap.get(i));
+               // System.out.println(encoder.encode(txtMap.get(i)));
+            }
+           // System.out.println(txtArray.toString());
             filereader.close();
         }catch (FileNotFoundException e) {
             // TODO: handle exception

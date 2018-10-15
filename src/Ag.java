@@ -58,7 +58,7 @@ public class Ag {
 	        		//System.out.println(res);
 	        		//System.out.println(new String(encodeByte));
 	                //System.out.println(encodeByte);
-	        		
+	        	//	 byte[] encodeByte = encoder.encode(line.getBytes());
 	        		//byte[] decodeByte = decoder.decode(encodeByte);
 	        	//	System.out.println(new String(decodeByte));
 	                

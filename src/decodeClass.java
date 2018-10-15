@@ -4,7 +4,7 @@ public class decodeClass {
 
     public void decode(){
         try{
-            File file = new File("C:\\in_workspace\\encipherment\\txt_file\\decode.txt");
+            File file = new File("C:\\IdeaProjects\\encipherment\\txt_file\\decode.txt");
 
             FileReader filereader = new FileReader(file);
             BufferedReader bufReader = new BufferedReader(filereader);
