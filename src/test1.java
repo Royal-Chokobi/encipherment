@@ -1,13 +1,4 @@
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-import java.util.Base64;
-import java.util.Base64.Decoder;
-import java.util.Base64.Encoder;
-import java.util.Random;
+import java.security.CryptoPrimitive;
 
 public class test1{
     public static void main(String[] args) {
@@ -40,33 +31,20 @@ public class test1{
         //System.out.println((char)singleCh);  //returns c548
         encodeClass encode = new encodeClass();
         decodeClass decode = new decodeClass();
+        algorithmClass algorithm = new algorithmClass();
+        encode.encode();
+        decode.decode();
+        algorithm.algorithmDecode();
+        String t = new String();
+        char tt = 'a';
 
-       encode.encode();
-       decode.decode();
-
-        Random randomNum = new Random();
-        int cnt=randomNum.nextInt(99)+1;
-
-        int x_axis = randomNum.nextInt(10);
-        int y_axis = randomNum.nextInt(10);
-        int alpha = x_axis+1;
-        int beta = y_axis+1;
-
-        for (int i = 0; i < cnt; i++) {
-
-            if(i%2 == 0){
-
-                x_axis = (x_axis+alpha);
-                alpha = (alpha >= 0) ? ((++alpha)*(-1)) : ((--alpha)*(-1));
-
-            }else{
-
-                y_axis = (y_axis+beta);
-                beta = (beta >= 0) ? ((++beta)*(-1)) : ((--beta)*(-1));
-
-            }
-            System.out.println("x : "+x_axis + " y : "+ y_axis);
-        }
+        System.out.println( Integer.parseInt("c548", 16) );
+        System.out.println( 50504 >> 1);
+        System.out.println( (int)('씀'));
+        System.out.println( (int)('Ɗ') << 7);
+        System.out.println( Integer.toOctalString('1') );
+        //Integer.getInteger(Integer.toBinaryString('안'),16);
+        //Integer.toBinaryString('안')
 
 
     }

@@ -12,7 +12,7 @@ public class encodeClass {
 
     public void encode(){
         try{
-            File file = new File("C:\\IdeaProjects\\encipherment\\txt_file\\encode.txt");
+            File file = new File("C:\\in_workspace\\encipherment\\txt_file\\encode.txt");
             FileReader filereader = new FileReader(file);
             int ch_txt = 0;
             String txt = "";
@@ -22,7 +22,7 @@ public class encodeClass {
             int lineNum = 0;
 
             while((ch_txt = filereader.read()) != -1){
-
+                //System.out.println(ch_txt);
                 if(((char)ch_txt == '\r') || ((char)ch_txt == '\n')){
                     //System.out.print("=====================");
                     // System.out.print("\n");
@@ -30,6 +30,11 @@ public class encodeClass {
                     //System.out.print((char)singleCh);
                     // System.out.println(Integer.toString((char)singleCh, 16));
                     String char_txt_16= Integer.toString((char)ch_txt, 16);
+
+
+
+
+
 
                     if(char_txt_16.equals("2e")){
                         txtArray.add(char_txt_16);
