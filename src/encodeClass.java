@@ -31,11 +31,6 @@ public class encodeClass {
                     // System.out.println(Integer.toString((char)singleCh, 16));
                     String char_txt_16= Integer.toString((char)ch_txt, 16);
 
-
-
-
-
-
                     if(char_txt_16.equals("2e")){
                         txtArray.add(char_txt_16);
                         txt += char_txt_16;
@@ -57,18 +52,28 @@ public class encodeClass {
             }
 
             //System.out.println(txt);
-            Encoder encoder = Base64.getEncoder();
-            Decoder decoder = Base64.getDecoder();
+           // Encoder encoder = Base64.getEncoder();
+           // Decoder decoder = Base64.getDecoder();
 
             //	 byte[] encodeByte = encoder.encode(line.getBytes());
             //  byte[] decodeByte = decoder.decode(encodeByte);
             //	System.out.println(new String(decodeByte));
+
+            Base64.Encoder Bs64_encoder = Base64.getEncoder();
+
             for(int i = 0; i < txtMap.size(); i++){
                // Integer.decode(txtMap.get(i));
 
                 //txtMap.get(i);
               //  byte[] encodeByte = encoder.encode(txtMap.get(i).getBytes());
-                System.out.println(txtMap.get(i));
+             //   System.out.println(txtMap.get(i));
+
+                String target = txtMap.get(i);
+                byte[] encodeBytes = target.getBytes("UTF-8");
+                String encodedString = Bs64_encoder.encodeToString(encodeBytes);
+
+                System.out.println(encodedString);
+
                // System.out.println(encoder.encode(txtMap.get(i)));
             }
            // System.out.println(txtArray.toString());
